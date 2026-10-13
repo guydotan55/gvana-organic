@@ -167,13 +167,25 @@ section{padding:74px 0;position:relative}
 /* trends */
 .snap{margin:34px 0 18px;background:rgba(255,126,29,.1);border:1px dashed rgba(255,126,29,.55);border-radius:14px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;color:var(--navy);font-size:15.5px}
 .snap-tag{background:var(--orange);color:var(--navy);font-family:"Secular One";font-size:13px;padding:2px 11px;border-radius:20px}
-.snap span:last-child{color:var(--muted);flex-basis:100%}
-.tcard .role{display:inline-block;font-size:13px;font-weight:700;color:var(--cyan);background:rgba(56,180,230,.12);padding:4px 11px;border-radius:20px;margin:14px 0}
-.tcard .hooks{margin:6px 0 14px}
-.tcard .how{margin-bottom:12px}
-.tcard .src{font-size:13px;color:var(--muted);border-top:1px solid rgba(14,33,72,.08);padding-top:10px;margin-top:auto}
-.tcard .src a{color:var(--navy);font-weight:700}
+.sub-h{font-size:clamp(22px,3vw,27px);margin:46px 0 16px;color:var(--navy)}
+.rules li.warn{counter-increment:none;background:rgba(255,126,29,.08);border:1px dashed rgba(255,126,29,.55);box-shadow:none}
+.rules li.warn::before{content:"!";background:var(--orange);color:var(--navy)}
 .tcard{display:flex;flex-direction:column}
+.tcard .role{align-self:flex-start;font-size:13px;font-weight:700;color:var(--navy);background:rgba(255,126,29,.16);padding:3px 10px;border-radius:20px;margin:0 0 10px}
+.tcard .how{margin:10px 0 18px;color:var(--ink)}
+.tcard .how b{color:var(--navy)}
+.tcard .hooks{margin:auto 0 0}
+.evidence{margin-top:26px;background:var(--paper);border:1px solid rgba(14,33,72,.1);border-radius:14px;padding:0 20px}
+.evidence summary{cursor:pointer;list-style:none;padding:16px 0;font-family:"Secular One";color:var(--navy);font-size:17px;display:flex;gap:10px;align-items:center}
+.evidence summary::-webkit-details-marker{display:none}
+.evidence summary::before{content:"+";flex:0 0 26px;height:26px;border-radius:8px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px}
+.evidence[open] summary::before{content:"–"}
+.evidence .ev-body{padding:0 0 20px;color:var(--muted);font-size:15px}
+.evidence h4{font-family:"Secular One";font-weight:400;color:var(--navy);font-size:16px;margin:14px 0 6px}
+.evidence ul{margin:0;padding-inline-start:20px}
+.evidence li{margin:4px 0}
+.evidence p{margin:8px 0 0}
+.evidence a{color:var(--navy);font-weight:700}
 
 /* wall poster */
 .wall{background:var(--cream)}
@@ -389,71 +401,83 @@ footer code{background:rgba(255,255,255,.08);padding:2px 8px;border-radius:6px;d
 <!-- 05 TRENDS -->
 <section id="trends" class="wrap reveal">
   <span class="sec-num">05 · טרנדים</span>
-  <h2 class="sec-title">לרכוב על טרנדים — בקול של גוונא</h2>
+  <h2 class="sec-title">טרנד שמתאים לנו מצלמים עוד באותו שבוע</h2>
   <div class="divider"></div>
-  <p class="sec-lead">טרנד הוא רק קליפה. מה שבפנים תמיד אותם אנשים אמיתיים ואותו רגש: <span class="o">שייכות</span>. לוקחים את הצורה, ממלאים אותה בחיים של המכינה.</p>
+  <p class="sec-lead">ראית טרנד? עוברים על הצ'קליסט פה למטה. אם הוא עובר, מצלמים אותו עם <span class="o">החבר'ה שלנו</span> ומעלים עוד באותו שבוע.</p>
 
+  <h3 class="sub-h">ככה הופכים טרנד לריל שלנו</h3>
   <ul class="rules">
-    <li><div><b>בוחרים לפי שלוש שאלות.</b> האם זה מתאים לאחד מחמשת הפילרים? האם זה משרת שייכות? והאם הטרנד עוד בעלייה, ולא כבר בירידה?</div></li>
-    <li><div><b>קופצים תוך ימים ספורים.</b> טרנד שווה משהו רק כשהוא טרי. אם לא מספיקים לצלם השבוע, מוותרים ולא מחכים.</div></li>
-    <li><div><b>מתאימים, לא מעתיקים.</b> אותה צורה, אבל עם החניכים והרגעים האמיתיים של המחזור, בעברית מדוברת ובלי מראה AI.</div></li>
-    <li><div><b>מדלגים על מה שלא שלנו.</b> טרנד שצוחק על מישהו, מבייש, מפחיד או מסוכן, או כזה שלא קשור לכלום אצלנו, לא עושים. וגם לא כל מה שסותר את כללי הברזל שבפרק הבא.</div></li>
-    <li><div><b>בודקים צליל לפני שמשתמשים.</b> לא כל סאונד מורשה לחשבון עסקי. מוודאים באינסטגרם לפני שמעלים.</div></li>
+    <li class="warn"><div><b>לא נוגעים</b> בטרנד שצוחק על מישהו, מבייש, מפחיד או מסוכן, או שסותר את כללי הברזל (פרק 06).</div></li>
+    <li><div><b>יש לו פילר?</b> אם הוא לא נכנס לאף אחד מהחמישה, מדלגים.</div></li>
+    <li><div><b>יש בו שייכות?</b> הריל צריך להרגיש כמו "לא עושים את הדרך הזו לבד".</div></li>
+    <li><div><b>הוא עוד בעלייה?</b> אם הוא כבר בירידה, פספסנו. עוברים לבא.</div></li>
+    <li><div><b>מצלמים את שלנו.</b> חניכים ורגעים אמיתיים מהמחזור, עברית של יום-יום, בלי מראה AI.</div></li>
+    <li class="warn"><div><b>לא כל סאונד מותר לחשבון עסקי.</b> בודקים באינסטגרם לפני שמעלים.</div></li>
+    <li><div><b>מעלים באותו שבוע.</b> לא הספקת? מוותרים.</div></li>
   </ul>
 
-  <div class="snap">
-    <span class="snap-tag">צילום מצב</span>
-    <b>דוגמאות מאוקטובר 2026 — לרפרנס בלבד, טרנדים מתחלפים מהר.</b>
-    <span>בעוד חודש חלק מהם כבר יהיו מאחורינו. הכלי האמיתי הוא הכללים שמעל, לא הרשימה.</span>
-  </div>
+  <h3 class="sub-h">5 טרנדים מאוקטובר 2026 שמתאימים לנו</h3>
+  <div class="snap"><span class="snap-tag">צילום מצב</span><span>טרנדים מתחלפים מהר. בנובמבר חלק מאלה כבר יהיו מאחורינו (בשביל זה יש צ'קליסט).</span></div>
 
   <div class="grid g3">
     <div class="vcard tcard">
-      <div class="n">טרנד 1</div>
-      <h3>רילז שפותחים בבעיה</h3>
-      <p>הסרטון נפתח במצב מוכר ומעצבן, ורק אחר כך מגיעה ההתרה.</p>
-      <span class="role">פילר 5 · רגע לפני הגיוס</span>
+      <div class="n">פילר 5 · רגע לפני הגיוס</div>
+      <h3>פותחים בבעיה</h3>
+      <p>הריל נפתח במשהו מוכר ומעצבן, והפתרון בא אחר כך.</p>
+      <p class="how"><b>אצלנו:</b> השאלה שכל אחד/ת מכיר/ה, ואז חניכים שעמדו בדיוק שם.</p>
       <ul class="hooks"><li>כולם שואלים אותך "אז מה אחרי הצבא?" ואין לך תשובה. גם לנו לא הייתה.</li></ul>
-      <p class="how">מתחילים בשאלה שכל אחד/ת מכיר/ה, ומראים חניכים אמיתיים שעמדו בדיוק שם.</p>
-      <div class="src">מקור: <a href="https://lightreel.ai/blogs/whats-trending-on-instagram" target="_blank" rel="noopener">LightReel</a> · עודכן 3.10.2026</div>
     </div>
     <div class="vcard tcard">
-      <div class="n">טרנד 2</div>
-      <h3>אתגר חברים, המפסיד מכבד</h3>
-      <p>חברים מתחרים באתגר קטן, ומי שמפסיד משלם על קפה לכולם.</p>
-      <span class="role">פילר 3 · חברים שהם משפחה</span>
+      <div class="n">פילר 3 · חברים שהם משפחה</div>
+      <h3>אתגר חברים, המפסיד מזמין קפה</h3>
+      <p>מתחרים על משהו קטן, ומי שמפסיד קונה קפה לכולם.</p>
+      <p class="how"><b>אצלנו:</b> הצחוקים והעקיצות, בלי לקחת את התחרות ברצינות.</p>
       <ul class="hooks"><li>אתגר צעדים בין חדר האוכל למעונות. מי שמפסיד מביא קפה לכל החדר.</li></ul>
-      <p class="how">מצלמים את הצחוק והקנטות החברים, בלי להפוך את זה לתחרות רצינית.</p>
-      <div class="src">מקור: <a href="https://lightreel.ai/blogs/whats-trending-on-instagram" target="_blank" rel="noopener">LightReel</a> · עודכן 3.10.2026</div>
     </div>
     <div class="vcard tcard">
-      <div class="n">טרנד 3</div>
-      <h3>סרטוני תהליך ארוכים</h3>
-      <p>צילום בגוף ראשון של תהליך שלם, צעד אחרי צעד, בלי חיתוכים.</p>
-      <span class="role">פילר 4 · מה באמת עושים פה</span>
+      <div class="n">פילר 4 · מה באמת עושים פה</div>
+      <h3>סרטון תהליך ארוך</h3>
+      <p>תהליך שלם בגוף ראשון, צעד אחרי צעד, בלי חיתוכים.</p>
+      <p class="how"><b>אצלנו:</b> סמינר או סימולציה אחת, כמו שהיא נראית מבפנים.</p>
       <ul class="hooks"><li>שעה אחת של שיעור אצלנו, מההתחלה ועד הסוף. בלי חיתוכים.</li></ul>
-      <p class="how">בוחרים פעילות אחת אמיתית, כמו סמינר או סימולציה, ומראים איך היא נראית מבפנים.</p>
-      <div class="src">מקור: <a href="https://lightreel.ai/blogs/whats-trending-on-instagram" target="_blank" rel="noopener">LightReel</a> · עודכן 3.10.2026</div>
     </div>
     <div class="vcard tcard">
-      <div class="n">טרנד 4</div>
+      <div class="n">פילר 2 · הסיפור של…</div>
+      <span class="role">עונתי · רק עד 31.10.2026</span>
       <h3>"דברים שצריך לעשות להם גוסטינג"</h3>
-      <p>דמות עם שלט מחזיקה שלטים של הרגלים ומיתוסים, והסרטון "עושה להם גוסטינג".</p>
-      <span class="role">פילר 2 · הסיפור של…</span>
+      <p>דמות מחזיקה שלטים עם הרגלים ומיתוסים, ו"עושה להם גוסטינג".</p>
+      <p class="how"><b>אצלנו:</b> שלטים עם מיתוסים על מכינה, ואחרי כל שלט הרגע האמיתי שסתר אותו.</p>
       <ul class="hooks"><li>מה שחשבתי שיהיה במכינה, ומה שבאמת מצאתי.</li></ul>
-      <p class="how">חניך/ה מחזיק/ה שלטים עם מיתוסים על מכינה, ואחרי כל אחד מגיע הרגע האמיתי שסתר אותו. עונתי, עד סוף אוקטובר.</p>
-      <div class="src">מקור: <a href="https://newengen.com/insights/instagram-trends/" target="_blank" rel="noopener">NewEngen</a> · עודכן 1.10.2026</div>
     </div>
     <div class="vcard tcard">
-      <div class="n">טרנד 5</div>
-      <h3>יומנים אישיים בטקסט קצר</h3>
-      <p>קטעי וידאו יומיומיים עם טקסט ממוספר שמספר איך מרגיש. עדיין בתחילת הדרך.</p>
-      <span class="role">פילר 1 · בוא/י איתי ליום בגוונא</span>
+      <div class="n">פילר 1 · בוא/י איתי ליום בגוונא</div>
+      <span class="role">עוד בהתחלה</span>
+      <h3>יומן קצר עם טקסט על המסך</h3>
+      <p>קטעים מהיום, עם טקסט ממוספר על איך זה מרגיש.</p>
+      <p class="how"><b>אצלנו:</b> יומן של השבוע הראשון, קליל וחם. בלי נושאים כבדים ובלי לחץ.</p>
       <ul class="hooks"><li>יום 1: הגעתי לבד. יום 3: כבר יש מי שמחכה לי בארוחת בוקר.</li></ul>
-      <p class="how">יומן שבוע ראשון, קליל וחם. אף פעם לא נושאים כבדים או כאלה שיוצרים לחץ.</p>
-      <div class="src">מקור: <a href="https://lightreel.ai/blogs/whats-trending-on-instagram" target="_blank" rel="noopener">LightReel</a> · עודכן 3.10.2026</div>
     </div>
   </div>
+
+  <details class="evidence">
+    <summary>מאיפה הטרנדים, ומה השארנו בחוץ</summary>
+    <div class="ev-body">
+      <h4>מקורות</h4>
+      <ul>
+        <li><a href="https://lightreel.ai/blogs/whats-trending-on-instagram" target="_blank" rel="noopener">LightReel</a>, עודכן 3.10.2026 · טרנדים 1, 2, 3 ו-5</li>
+        <li><a href="https://newengen.com/insights/instagram-trends/" target="_blank" rel="noopener">NewEngen</a>, עודכן 1.10.2026 · טרנד 4</li>
+      </ul>
+      <p>שני המקורות הם בלוגים שמסכמים טרנדים. אין פה נתונים מאינסטגרם עצמו, אז לפני שמצלמים תציצו באפליקציה שהטרנד עוד חי.</p>
+      <h4>מה פסלנו, ולמה</h4>
+      <ul>
+        <li>טרנדים על שיר מוכר, כמו הטרנד <bdi>Taylor Swift wedding edit</bdi>: לא בטוח שהשיר מותר לחשבון עסקי, והמקורות סותרים זה את זה.</li>
+        <li>הטרנד <bdi>"Message From A"</bdi>: מתנגש בטון החם שלנו.</li>
+        <li>סרטוני <bdi>looksmaxxing</bdi>, ויכוחים של זוגות וסרטונים בסגנון אזעקה: לא הטון שלנו.</li>
+        <li>הטרנדים <bdi>"My Reaction To"</bdi> וגם <bdi>"WTF Is"</bdi>: לא נכנסים לאף פילר.</li>
+        <li>סיכומי סתיו, תחפושות להאלווין, חשיפות מוצר ופרסומות לאפליקציות: לא מתאים לנו.</li>
+      </ul>
+    </div>
+  </details>
 </section>
 
 <!-- 06 RULES -->
@@ -496,7 +520,7 @@ footer code{background:rgba(255,255,255,.08);padding:2px 8px;border-radius:6px;d
         <li>חבר, לא מוסד. אמיתי לפני מלוטש. מראים, לא מוכרים.</li>
         <li>שייכות היא הרגש: "לא עושים את הדרך הזו לבד".</li>
         <li>חמישה פילרים · פעמיים בשבוע ריל + סטוריז יומי.</li>
-        <li>טרנדים: קופצים תוך ימים, מתאימים לאנשים האמיתיים שלנו, ומדלגים על כל מה שמבייש או מפחיד.</li>
+        <li>ראית טרנד שמתאים לפילר? מצלמים אותו עם החבר'ה שלנו ומעלים עוד באותו שבוע.</li>
         <li>חומר אמיתי, בלי מראה AI · נייבי+כתום · IG ראשי + טיקטוק.</li>
       </ol>
     </div>
