@@ -1,0 +1,562 @@
+<title>מדריך סושיאל אורגני · גוונא</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Secular+One&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --navy:#0E2148;
+  --navy-deep:#081536;
+  --navy-soft:#1B3467;
+  --cream:#F7F3EA;
+  --paper:#FFFFFF;
+  --ink:#14213D;
+  --muted:#5B6480;
+  --orange:#FF7E1D;
+  --orange-soft:#FFB673;
+  --cyan:#38B4E6;
+  --shadow:0 18px 50px -24px rgba(8,21,54,.45);
+  --shadow-sm:0 8px 24px -14px rgba(8,21,54,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Assistant",-apple-system,"Segoe UI",Arial,sans-serif;
+  background:var(--cream);color:var(--ink);line-height:1.65;font-size:17px;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:"Secular One",sans-serif;font-weight:400;letter-spacing:-.01em;line-height:1.12}
+.o,.accent{color:var(--orange)}
+.cyan{color:var(--cyan)}
+.dotgrid{background-image:radial-gradient(rgba(56,180,230,.16) 1.4px, transparent 1.5px);background-size:22px 22px;}
+.drop{position:absolute;border-radius:70% 70% 70% 0;transform:rotate(-45deg);filter:blur(.2px);opacity:.9;pointer-events:none;}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(14,33,72,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(56,180,230,.25);color:#fff;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 26px}
+.brand-mark{display:flex;align-items:center;gap:10px;font-family:"Secular One";font-size:19px;white-space:nowrap}
+.brand-dot{width:16px;height:16px;border-radius:60% 60% 60% 0;background:var(--orange);transform:rotate(-45deg);box-shadow:0 0 0 3px rgba(255,126,29,.2)}
+.nav-links{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{color:#c9d4ec;text-decoration:none;font-size:14.5px;font-weight:600;padding:6px 11px;border-radius:20px;transition:.2s;white-space:nowrap;}
+.nav-links a:hover{color:#fff;background:rgba(56,180,230,.16)}
+.nav-links a.active{color:var(--navy);background:var(--orange)}
+@media(max-width:820px){.nav-links{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 90% -10%, rgba(56,180,230,.22), transparent 55%),radial-gradient(90% 80% at 5% 110%, rgba(255,126,29,.16), transparent 55%),linear-gradient(160deg,var(--navy) 0%, var(--navy-deep) 100%);color:#fff;padding:92px 26px 104px;}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2}
+.kicker{display:inline-flex;align-items:center;gap:9px;background:rgba(255,126,29,.16);color:var(--orange-soft);border:1px solid rgba(255,126,29,.4);padding:7px 15px;border-radius:100px;font-weight:700;font-size:14px;letter-spacing:.02em;}
+.hero h1{font-size:clamp(44px,8vw,92px);margin:26px 0 0}
+.hero .wm{display:block;font-size:clamp(20px,3vw,30px);color:var(--cyan);margin-top:10px;font-family:"Secular One"}
+.hero-note{margin:30px 0 0;max-width:700px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-inline-start:4px solid var(--orange);border-radius:12px;padding:16px 20px;color:#e6ecf9;font-size:17px;line-height:1.5}
+.hero-note b{color:#fff;font-weight:800}
+.spine{max-width:760px;margin:26px 0 0;font-size:clamp(18px,2.3vw,23px);line-height:1.5;color:#e6ecf9;font-weight:400;}
+.spine strong{color:#fff;font-weight:700}
+.hero-meta{margin-top:38px;display:flex;gap:26px;flex-wrap:wrap;color:#9fb0d2;font-size:14.5px;font-weight:600}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+.hero-meta b{color:#fff;font-weight:700}
+.hero .drop-1{width:200px;height:200px;background:rgba(255,126,29,.14);top:-40px;left:8%}
+.hero .drop-2{width:120px;height:120px;background:rgba(56,180,230,.16);bottom:40px;left:22%}
+
+/* layout */
+.wrap{max-width:1100px;margin:0 auto;padding:0 26px}
+section{padding:74px 0;position:relative}
+.sec-num{font-family:"Secular One";color:var(--orange);font-size:15px;letter-spacing:.08em;display:inline-block;margin-bottom:6px;}
+.sec-title{font-size:clamp(30px,4.6vw,46px);margin:0 0 10px}
+.sec-lead{font-size:19px;color:var(--muted);max-width:720px;margin:0 0 34px}
+.divider{height:3px;width:64px;background:var(--cyan);border-radius:3px;margin:14px 0 30px}
+
+/* narrative band */
+.band{position:relative;overflow:hidden;color:#fff;background:linear-gradient(155deg,var(--navy-soft),var(--navy-deep));}
+.band .wrap{padding-top:78px;padding-bottom:78px;position:relative;z-index:2}
+.band .sec-num{color:var(--orange-soft)}
+.band .sec-title{color:#fff}
+.band-tagline{font-family:"Secular One";font-size:clamp(18px,2.4vw,24px);color:var(--orange-soft);margin:6px 0 0}
+.manifesto{font-size:clamp(23px,3.4vw,38px);line-height:1.35;font-family:"Secular One";max-width:900px;margin:22px 0 0}
+.manifesto .o,.accent{color:var(--orange)}
+.band .drop-a{width:260px;height:260px;background:rgba(255,126,29,.12);top:-60px;left:-40px}
+.band .drop-b{width:150px;height:150px;background:rgba(56,180,230,.14);bottom:-30px;left:16%}
+
+/* cards grid */
+.grid{display:grid;gap:18px}
+.grid.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:880px){.grid.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid.g3{grid-template-columns:1fr}}
+.vcard{background:var(--paper);border-radius:16px;padding:24px 24px 26px;border:1px solid rgba(14,33,72,.07);box-shadow:var(--shadow-sm);border-inline-start:4px solid var(--orange);transition:transform .25s ease, box-shadow .25s ease;}
+.vcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.vcard .n{font-family:"Secular One";color:var(--orange);font-size:15px}
+.vcard h3{font-size:22px;margin:6px 0 8px}
+.vcard p{margin:0;color:var(--muted);font-size:15.5px}
+
+/* pillars */
+.pillar{background:var(--paper);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid rgba(14,33,72,.06);display:grid;grid-template-columns:96px 1fr;transition:transform .25s ease, box-shadow .25s ease;}
+.pillar:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.pillar+.pillar{margin-top:20px}
+.pillar .idx{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Secular One";font-size:40px;position:relative;}
+.pillar .idx::after{content:"";position:absolute;inset-inline-start:0;top:14%;bottom:14%;width:4px;background:var(--orange)}
+.pillar .body{padding:24px 26px 26px}
+.pillar h3{font-size:24px;margin:0 0 4px}
+.pillar .role{display:inline-block;font-size:13px;font-weight:700;color:var(--cyan);background:rgba(56,180,230,.12);padding:4px 11px;border-radius:20px;margin:6px 0 14px;}
+.pillar .what{color:var(--muted);margin:0 0 16px;font-size:15.5px}
+.hooks{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:9px}
+.hooks li{position:relative;padding:10px 16px;background:var(--cream);border-radius:10px;border-inline-start:3px solid var(--orange-soft);font-weight:600;font-size:15.5px;color:var(--ink);}
+.hooks li::before{content:"הוק";position:absolute;top:-8px;inset-inline-start:12px;font-size:10px;font-weight:800;color:#fff;background:var(--orange);padding:1px 7px;border-radius:8px;letter-spacing:.04em}
+.caption{display:flex;gap:11px;align-items:flex-start;background:linear-gradient(180deg,#fff,#fbfaf6);border:1px dashed rgba(255,126,29,.5);border-radius:12px;padding:13px 15px;}
+.caption .ig{flex:0 0 34px;height:34px;border-radius:50%;background:conic-gradient(from 200deg,var(--orange),#ff4d6d,var(--cyan),var(--orange));display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;}
+.caption .txt{font-size:15px}
+.caption .txt b{color:var(--navy);font-family:"Secular One";font-weight:400;font-size:14px}
+.caption .txt p{margin:2px 0 0;color:var(--ink)}
+@media(max-width:520px){.pillar{grid-template-columns:1fr}.pillar .idx{padding:14px;font-size:30px}.pillar .idx::after{display:none}}
+
+/* rhythm */
+.rhythm{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;align-items:start}
+@media(max-width:760px){.rhythm{grid-template-columns:1fr}}
+.rlist{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.rlist li{display:flex;gap:14px;align-items:flex-start;background:var(--paper);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-sm);border:1px solid rgba(14,33,72,.06)}
+.rlist .ic{flex:0 0 40px;height:40px;border-radius:11px;background:rgba(255,126,29,.13);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:20px}
+.rlist b{font-family:"Secular One";font-weight:400;font-size:17px;color:var(--navy)}
+.rlist p{margin:2px 0 0;color:var(--muted);font-size:15px}
+.weekcard{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:#fff;border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.weekcard h4{font-family:"Secular One";font-weight:400;margin:0 0 16px;font-size:20px;color:var(--orange-soft)}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;text-align:center}
+.day{padding:10px 2px;border-radius:10px;background:rgba(255,255,255,.06);font-size:12.5px;font-weight:600;color:#aebbdb}
+.day.post{background:var(--orange);color:var(--navy);font-weight:800}
+.day .em{display:block;font-size:11px;font-weight:800;margin-top:3px}
+.weekcard .legend{margin-top:15px;font-size:13.5px;color:#c3cfe9;display:flex;gap:16px;flex-wrap:wrap}
+.weekcard .legend span{display:flex;align-items:center;gap:7px}
+.chip{width:12px;height:12px;border-radius:4px;display:inline-block}
+
+/* rules */
+.rules{list-style:none;counter-reset:r;padding:0;margin:0;display:grid;gap:12px}
+.rules li{counter-increment:r;display:flex;gap:15px;align-items:flex-start;background:var(--paper);border-radius:13px;padding:15px 18px;box-shadow:var(--shadow-sm);border:1px solid rgba(14,33,72,.06)}
+.rules li::before{content:counter(r);flex:0 0 32px;height:32px;border-radius:9px;background:var(--navy);color:#fff;font-family:"Secular One";display:flex;align-items:center;justify-content:center;font-size:16px}
+.rules b{color:var(--navy)}
+
+/* wall poster */
+.wall{background:var(--cream)}
+.poster{background:linear-gradient(160deg,var(--navy),var(--navy-deep));border-radius:24px;padding:44px clamp(24px,5vw,56px);color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow);}
+.poster .drop-p{width:220px;height:220px;background:rgba(255,126,29,.12);top:-50px;left:-30px}
+.poster h3{font-size:clamp(24px,3.4vw,34px);margin:0 0 6px;position:relative}
+.poster .sub{color:var(--orange-soft);font-weight:700;margin-bottom:24px;position:relative}
+.wall-list{list-style:none;counter-reset:w;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;position:relative}
+@media(max-width:640px){.wall-list{grid-template-columns:1fr}}
+.wall-list li{counter-increment:w;display:flex;gap:13px;align-items:flex-start;font-size:16.5px;font-weight:600}
+.wall-list li::before{content:counter(w);flex:0 0 30px;height:30px;border-radius:50%;background:var(--orange);color:var(--navy);font-family:"Secular One";display:flex;align-items:center;justify-content:center;font-size:15px}
+
+/* footer */
+footer{background:var(--navy-deep);color:#9fb0d2;padding:40px 26px;text-align:center;font-size:14px}
+footer .brand-mark{justify-content:center;color:#fff;margin-bottom:12px}
+footer code{background:rgba(255,255,255,.08);padding:2px 8px;border-radius:6px;direction:ltr;display:inline-block;color:#cfe6f5}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+@media print{
+  .nav{display:none}.hero{padding:40px 26px}body{background:#fff}
+  .pillar:hover,.vcard:hover{transform:none}section{padding:26px 0;break-inside:avoid}
+}
+
+/* trend examples (pillar 6) */
+.trend-ex{background:var(--cream);border-radius:14px;padding:16px 18px;border:1px solid rgba(14,33,72,.06)}
+.trend-ex+.trend-ex{margin-top:14px}
+.trend-ex h4{font-family:"Secular One";font-weight:400;font-size:19px;color:var(--navy);margin:0 0 6px}
+.trend-ex p{margin:0 0 8px;color:var(--ink);font-size:15.5px}
+.trend-ex p strong{color:var(--navy)}
+.trend-ex .hooks{margin:14px 0 12px}
+.trend-ex .hooks li{background:#fff}
+.trend-ex .ref-btn{display:flex;align-items:center;gap:14px;margin-top:16px;padding:14px 18px;border-radius:14px;background:var(--orange);color:var(--navy);text-decoration:none;box-shadow:0 8px 22px rgba(255,126,29,.35);transition:transform .15s ease, box-shadow .15s ease}
+.trend-ex .ref-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,126,29,.45)}
+.trend-ex .ref-btn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.trend-ex .ref-btn .play{flex:none;width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--orange);display:grid;place-items:center;font-size:18px}
+.trend-ex .ref-btn .txt{display:flex;flex-direction:column;line-height:1.3;min-width:0}
+.trend-ex .ref-btn b{font-family:"Secular One";font-weight:400;font-size:20px}
+.trend-ex .ref-btn bdi{font-size:14px;opacity:.8}
+.pillar.trend .idx{background:linear-gradient(160deg,var(--orange),#e86a0c);color:var(--navy)}
+.pillar.trend .idx::after{background:var(--navy)}
+
+/* phone */
+@media(max-width:600px){
+  .wrap{padding:0 16px}
+  .hero{padding:64px 16px 72px}
+  .nav-inner{padding:12px 16px}
+  .pillar .body{padding:20px 16px 22px}
+  .weekcard{padding:20px 16px}
+  .poster{padding:32px 18px}
+}
+
+/* text editor (artifact only) */
+.edit-fab{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:80;background:var(--navy);color:#fff;border:2px solid var(--orange);border-radius:24px;padding:9px 18px;font:700 15px "Assistant",sans-serif;box-shadow:var(--shadow-sm);cursor:pointer}
+.edit-bar{position:fixed;left:0;right:0;bottom:0;z-index:80;background:var(--navy-deep);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;justify-content:center;box-shadow:0 -8px 24px -14px rgba(8,21,54,.6)}
+.edit-bar button{font:700 16px "Assistant",sans-serif;border-radius:22px;padding:9px 26px;cursor:pointer}
+#edit-save{background:var(--orange);color:var(--navy);border:0}
+#edit-save:disabled{opacity:.6;cursor:wait}
+#edit-cancel{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+.edit-status{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(74px + env(safe-area-inset-bottom,0px));z-index:81;max-width:calc(100vw - 32px);background:#fff;color:var(--navy);border:1px solid rgba(14,33,72,.15);border-radius:10px;padding:6px 12px;font-weight:700;font-size:14px;box-shadow:var(--shadow-sm)}
+.edit-status:empty{display:none}
+.edit-fab[hidden],.edit-bar[hidden]{display:none}
+.page.editing{padding-bottom:84px}
+.page.editing [data-k]{outline:2px dashed var(--orange);outline-offset:3px;border-radius:4px;cursor:text}
+.page.editing [data-k]:focus{outline-style:solid}
+.page.editing .vcard:hover,.page.editing .pillar:hover{transform:none}
+</style>
+<div dir="rtl" lang="he" id="guide" class="page">
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand-mark"><span class="brand-dot"></span>גוונא · אורגני</div>
+    <div class="nav-links">
+      <a href="#narrative">הכיוון</a>
+      <a href="#voice">הקול</a>
+      <a href="#pillars">פילרים</a>
+      <a href="#rhythm">מתי מעלים</a>
+      <a href="#rules">כללים</a>
+      <a href="#wall">לקיר</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero dotgrid">
+  <span class="drop drop-1"></span>
+  <span class="drop drop-2"></span>
+  <div class="hero-inner">
+    <span class="kicker"><span class="brand-dot" style="width:12px;height:12px;box-shadow:none"></span> <span data-k="hero-kicker">מדריך סושיאל אורגני</span></span>
+    <h1><span data-k="hero-title">מדריך סושיאל<br><span class="accent">אורגני</span></span>
+      <span class="wm" data-k="hero-sub">מכינת גוונא · אינסטגרם וטיקטוק</span>
+    </h1>
+    <div class="hero-note" data-k="hero-note"><strong>ככה אנחנו רוצים להיראות ולדבר באינסטגרם ובטיקטוק.</strong> המדריך הזה בשביל מי שמצלם/ת ומעלה את התוכן.</div>
+    <p class="spine" data-k="hero-spine">בחשבון של גוונא רואים מה קורה במחזור באמת: האנשים, היום-יום והחברים. מי שגולל/ת אצלנו צריך/ה להרגיש ש<strong>פה לא עושים את הדרך לבד</strong>.</p>
+    <div class="hero-meta">
+      <span data-k="hero-meta-aud">🎯 <strong>למי:</strong> צעירים וצעירות, 17–24</span>
+      <span data-k="hero-meta-format">🎬 <strong>מה:</strong> רילז וסטוריז</span>
+      <span data-k="hero-meta-when">🗓️ <strong>מתי:</strong> ב׳ ו-ד׳ ב-19:00</span>
+      <span data-k="hero-meta-feel">💙 <strong>הרגש:</strong> שייכות</span>
+    </div>
+  </div>
+</header>
+
+<!-- 01 NARRATIVE -->
+<section id="narrative" class="band" style="padding:0">
+  <span class="drop drop-a"></span>
+  <span class="drop drop-b"></span>
+  <div class="wrap">
+    <span class="sec-num" data-k="nar-num">01 · הכיוון</span>
+    <h2 class="sec-title" data-k="nar-title">מראים את המכינה במיטבה</h2>
+    <div class="band-tagline" data-k="nar-tagline">בשביל כל מי שעוד לא מכיר/ה אותנו</div>
+    <p class="manifesto" data-k="nar-manifesto">מראים איך זה באמת להיות פה, עם האנשים, האווירה והיום-יום. מצולם טוב, אבל אמיתי. אנחנו רוצים שמי שנכנס/ת לחשבון יחשוב/תחשוב שזאת <span class="accent">אחת המכינות הכי טובות בארץ</span>.</p>
+  </div>
+</section>
+
+<!-- 02 VOICE -->
+<section id="voice" class="wrap">
+  <span class="sec-num" data-k="voice-num">02 · הקול</span>
+  <h2 class="sec-title" data-k="voice-title">איך אנחנו מדברים</h2>
+  <div class="divider"></div>
+  <p class="sec-lead" data-k="voice-lead">כותבים ומדברים כמו שמדברים עם חברים. חם, פשוט, בלי מילים גבוהות.</p>
+  <div class="grid g3">
+    <div class="vcard"><div class="n">01</div><h3 data-k="voice1-title">מדברים כמו חבר/ה</h3><p data-k="voice1-text">כמו חניך/ה או מדריך/ה שכבר עבר/ה את זה ומספר/ת לך איך היה. חם וישיר, בלי טון של עלון פרסומי.</p></div>
+    <div class="vcard"><div class="n">02</div><h3 data-k="voice2-title">אמיתי עדיף על מושלם</h3><p data-k="voice2-text">עברית של יום-יום, משפטים קצרים, אור טבעי ופרצופים אמיתיים. סרטון קצת עקום ואמיתי עדיף על סרטון מופק מדי.</p></div>
+    <div class="vcard"><div class="n">03</div><h3 data-k="voice3-title">בלי למכור</h3><p data-k="voice3-text">רוב הסרטונים לא צריכים "הירשמו עכשיו" בסוף. מספיק שרואים מה קורה פה ואיך <span class="accent">זה מרגיש</span>.</p></div>
+    <div class="vcard"><div class="n">04</div><h3 data-k="voice4-title">הכול חוזר לשייכות</h3><p data-k="voice4-text">בסוף כל סרטון צריך להרגיש ש"לא עושים את הדרך הזו לבד", ושהחברים פה הם כמו משפחה.</p></div>
+    <div class="vcard"><div class="n">05</div><h3 data-k="voice5-title">פונים לכולם ולכולן</h3><p data-k="voice5-text">כותבים בלשון שמתאימה לבנים ולבנות. כשמצלמים מישהו או מישהי, מדברים בלשון שלו או שלה. אף פעם לא מתנשאים, לא מביישים ולא מפחידים.</p></div>
+    <div class="vcard"><div class="n">06</div><h3 data-k="voice6-title">נראים כמו מכינה מובילה</h3><p data-k="voice6-text">החשבון צריך להיראות כמו של אחת המכינות הכי טובות בארץ, כדי שכמה שיותר אנשים ירצו להיות חלק.</p></div>
+  </div>
+</section>
+
+<!-- 03 PILLARS -->
+<section id="pillars" class="wrap">
+  <span class="sec-num" data-k="pil-num">03 · פילרים</span>
+  <h2 class="sec-title" data-k="pil-title">פילרים לדוגמה</h2>
+  <div class="divider"></div>
+  <p class="sec-lead" data-k="pil-lead">פילר הוא סוג של סרטון שחוזר שוב ושוב. הנה שש דוגמאות כדי לתת לכם רעיונות. מותר וכדאי להמציא עוד.</p>
+
+  <div class="pillar">
+    <div class="idx">1</div>
+    <div class="body">
+      <h3 data-k="p1-title">בוא/י איתי ליום בגוונא</h3>
+      <span class="role" data-k="p1-role">בשביל מי שעוד לא מכיר/ה אותנו</span>
+      <p class="what" data-k="p1-what">מצלמים יום רגיל מהעיניים של חניך/ה, כולל מה שקורה מאחורי הקלעים.</p>
+      <ul class="hooks">
+        <li data-k="p1-hook1">6:40 בבוקר בגוונא. בואו לראות איך נראה אצלנו יום אחד.</li>
+        <li data-k="p1-hook2">שאלתם איך נראה יום רגיל במכינה? אז הנה, בלי פילטרים.</li>
+      </ul>
+      <div class="caption"><div class="ig">💬</div><div class="txt"><b data-k="p1-caplabel">קאפשן לדוגמה</b><p data-k="p1-caption">כל יום פה נראה קצת אחרת, ותמיד עוברים אותו ביחד 🧡</p></div></div>
+    </div>
+  </div>
+
+  <div class="pillar">
+    <div class="idx">2</div>
+    <div class="body">
+      <h3 data-k="p2-title">הסיפור של…</h3>
+      <span class="role" data-k="p2-role">מראה שזה עובד באמת</span>
+      <p class="what" data-k="p2-what">חניך/ה מספר/ת מאיפה הגיע/ה ואיפה הוא או היא עכשיו.</p>
+      <ul class="hooks">
+        <li data-k="p2-hook1">לפני חצי שנה הוא לא ידע מה הוא רוצה לעשות. תראו אותו עכשיו.</li>
+        <li data-k="p2-hook2">יואב הגיע לגוונא בלי להכיר אף אחד. ככה זה נראה היום.</li>
+      </ul>
+      <div class="caption"><div class="ig">💬</div><div class="txt"><b data-k="p2-caplabel">קאפשן לדוגמה</b><p data-k="p2-caption">כל אחד ואחת מגיעים לפה עם סיפור אחר. הנה אחד מהם.</p></div></div>
+    </div>
+  </div>
+
+  <div class="pillar">
+    <div class="idx">3</div>
+    <div class="body">
+      <h3 data-k="p3-title">חברים שהם משפחה</h3>
+      <span class="role" data-k="p3-role">בשביל שהחניכים ירצו לשתף</span>
+      <p class="what" data-k="p3-what">הקבוצה, הצחוקים והרגעים שבהם מרגישים שייכים.</p>
+      <ul class="hooks">
+        <li data-k="p3-hook1">החברים שהכרתי בגוונא יישארו איתי גם אחרי.</li>
+        <li data-k="p3-hook2">ביום הראשון לא הכרתי פה אף אחד. ככה זה נראה אחרי שבוע.</li>
+      </ul>
+      <div class="caption"><div class="ig">💬</div><div class="txt"><b data-k="p3-caplabel">קאפשן לדוגמה</b><p data-k="p3-caption">באנו להתכונן לצבא ומצאנו פה גם בית 🏠</p></div></div>
+    </div>
+  </div>
+
+  <div class="pillar">
+    <div class="idx">4</div>
+    <div class="body">
+      <h3 data-k="p4-title">מה באמת עושים פה</h3>
+      <span class="role" data-k="p4-role">עונה על השאלה "זה רציני?"</span>
+      <p class="what" data-k="p4-what">מה לומדים ועושים במכינה, ואיך זה מכין לשירות.</p>
+      <ul class="hooks">
+        <li data-k="p4-hook1">"מכינה זה סתם עוד שנה?" בואו נראה לכם מה קורה פה באמת.</li>
+        <li data-k="p4-hook2">3 דברים שלמדתי בגוונא ולא ציפיתי להם.</li>
+      </ul>
+      <div class="caption"><div class="ig">💬</div><div class="txt"><b data-k="p4-caplabel">קאפשן לדוגמה</b><p data-k="p4-caption">ככה נראה אצלנו יום של הכנה לשירות.</p></div></div>
+    </div>
+  </div>
+
+  <div class="pillar">
+    <div class="idx">5</div>
+    <div class="body">
+      <h3 data-k="p5-title">רגע לפני הגיוס</h3>
+      <span class="role" data-k="p5-role">בשביל מי שמתלבט/ת עכשיו</span>
+      <p class="what" data-k="p5-what">שיחה פשוטה עם מי שעוד לא יודע/ת מה לעשות עד הצבא.</p>
+      <ul class="hooks">
+        <li data-k="p5-hook1">עוד מתלבטים מה לעשות עד הגיוס? תשמעו רגע.</li>
+        <li data-k="p5-hook2">הדבר הכי טוב שעשיתי לפני הצבא זה לבוא לגוונא.</li>
+      </ul>
+      <div class="caption"><div class="ig">💬</div><div class="txt"><b data-k="p5-caplabel">קאפשן לדוגמה</b><p data-k="p5-caption">מתלבטים מה לעשות עד הגיוס? אפשר לדבר איתנו, הלינק בביו.</p></div></div>
+    </div>
+  </div>
+
+  <div class="pillar trend">
+    <div class="idx">6</div>
+    <div class="body">
+      <h3 data-k="p6-title">טרנד עם האנשים שלנו</h3>
+      <span class="role" data-k="p6-role">פורמט שכולם מכירים, אנשים שלנו</span>
+      <p class="what" data-k="p6-what">לוקחים פורמט שכולם בעולם עושים עכשיו ומצלמים אותו עם האנשים של גוונא. הנה שתי דוגמאות.</p>
+
+      <div class="trend-ex">
+        <h4 data-k="p6-ex1-title">מי הכי סביר ש…</h4>
+        <p data-k="p6-ex1-what">שני אנשים עונים על שאלות "מי הכי סביר ש…" ומצביעים אחד על השני.</p>
+        <p data-k="p6-ex1-ours"><strong>אצלנו:</strong> שני מדריכים או מדריכות מהמחזור.</p>
+        <ul class="hooks"><li data-k="p6-ex1-hook">מי מאיתנו הכי סביר שיאחר להשכמה?</li></ul>
+        <p data-k="p6-ex1-film"><strong>איך מצלמים:</strong> שניהם בפריים, מצלמה מקדימה. מישהו מאחורי המצלמה שואל, והם מצביעים מהר בלי לחשוב הרבה.</p>
+        <a class="ref-btn" href="https://www.instagram.com/reel/Db8zVkbJHcM/" target="_blank" rel="noopener"><span class="play" aria-hidden="true">▶</span><span class="txt"><b>לצפייה ברילס המקורי</b><bdi dir="ltr">Patrick Bet-David, "CEO vs President"</bdi></span></a>
+      </div>
+
+      <div class="trend-ex">
+        <h4 data-k="p6-ex2-title">רד פלאג / גרין פלאג</h4>
+        <p data-k="p6-ex2-what">מישהו עובר על נושא אחד ואומר מה בו רד פלאג ומה גרין פלאג.</p>
+        <p data-k="p6-ex2-ours"><strong>אצלנו:</strong> מדריך/ה או חניכים עוברים על רד פלאגס וגרין פלאגס של שותף או שותפה לחדר.</p>
+        <ul class="hooks"><li data-k="p6-ex2-hook">רד פלאגס וגרין פלאגס של שותף לחדר במכינה.</li></ul>
+        <p data-k="p6-ex2-film"><strong>איך מצלמים:</strong> כל פלאג בשוט קצר עם טקסט על המסך. שומרים על זה קליל, ולא צוחקים על מישהו מסוים.</p>
+        <a class="ref-btn" href="https://www.instagram.com/reel/DcjJs4MzLe9/" target="_blank" rel="noopener"><span class="play" aria-hidden="true">▶</span><span class="txt"><b>לצפייה ברילס המקורי</b><bdi dir="ltr">Tony Robbins, "Marriage red and green flags"</bdi></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 RHYTHM -->
+<section id="rhythm" class="wrap">
+  <span class="sec-num" data-k="cad-num">04 · מתי מעלים</span>
+  <h2 class="sec-title" data-k="cad-title">שני רילז בשבוע, ב׳ ו-ד׳ ב-19:00</h2>
+  <div class="divider"></div>
+  <div class="rhythm">
+    <ul class="rlist">
+      <li><span class="ic">🎬</span><div><b data-k="cad-reels-title">ריל בפיד ביום ב׳ וביום ד׳</b><p data-k="cad-time">מעלים ב-19:00. בדרך כלל ריל אחד של סיפור (כמו פילר 1 או 2) וריל אחד קליל יותר מהקבוצה (כמו פילר 3 עד 6).</p></div></li>
+      <li><span class="ic">📸</span><div><b data-k="cad-stories-title">סטוריז כמעט כל יום</b><p data-k="cad-stories">מה שקורה עכשיו ומאחורי הקלעים. לא צריך להשקיע בזה הרבה.</p></div></li>
+      <li><span class="ic">📱</span><div><b data-k="cad-tiktok-title">אינסטגרם קודם, ואז טיקטוק</b><p data-k="cad-tiktok">אותם רילז עולים גם לטיקטוק. שם כדאי לפתוח עם הוק בסגנון של טרנד, כדי שגם מי שלא מכיר/ה אותנו יעצור לראות.</p></div></li>
+    </ul>
+    <div class="weekcard">
+      <h4 data-k="cad-week-title">שבוע לדוגמה</h4>
+      <div class="days">
+        <div class="day">א׳</div>
+        <div class="day post">ב׳<span class="em">19:00</span></div>
+        <div class="day">ג׳</div>
+        <div class="day post">ד׳<span class="em">19:00</span></div>
+        <div class="day">ה׳</div>
+        <div class="day">ו׳</div>
+        <div class="day">ש׳</div>
+      </div>
+      <div class="legend">
+        <span><span class="chip" style="background:var(--orange)"></span> <span data-k="cad-legend-reel">ריל בפיד, 19:00</span></span>
+        <span><span class="chip" style="background:rgba(255,255,255,.15)"></span> <span data-k="cad-legend-stories">סטוריז לאורך כל השבוע</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 RULES -->
+<section id="rules" class="wrap">
+  <span class="sec-num" data-k="rules-num">05 · כללים</span>
+  <h2 class="sec-title" data-k="rules-title">מה כן ומה לא</h2>
+  <div class="divider"></div>
+  <ul class="rules">
+    <li><div data-k="rule1"><strong>לא מוכרים בכוח.</strong> לא צריך ללטש כל סרטון עד הסוף. מספיק להראות מה קורה פה.</div></li>
+    <li><div data-k="rule2"><strong>בלי להבייש ובלי להפחיד.</strong> גם בנושאים רגישים הטון הוא "יש עם מי לדבר", אף פעם לא "אתה בבעיה".</div></li>
+    <li><div data-k="rule3"><strong>נייבי וכתום, בלי אדום.</strong> מילה אחת חשובה בכתום.</div></li>
+    <li><div data-k="rule4"><strong>שני רילז בשבוע, ב׳ ו-ד׳ ב-19:00,</strong> וסטוריז כמעט כל יום.</div></li>
+  </ul>
+</section>
+
+<!-- WALL -->
+<section id="wall" class="wall">
+  <div class="wrap">
+    <div class="poster">
+      <span class="drop drop-p"></span>
+      <h3 data-k="wall-title">התקציר לקיר</h3>
+      <div class="sub" data-k="wall-sub">מדריך סושיאל אורגני · מכינת גוונא</div>
+      <ol class="wall-list">
+        <li data-k="wall-1">מראים את המכינה במיטבה, אמיתי ומצולם טוב.</li>
+        <li data-k="wall-2">מדברים כמו חברים, בעברית של יום-יום.</li>
+        <li data-k="wall-3">הכול חוזר לשייכות, ל"לא עושים את הדרך הזו לבד".</li>
+        <li data-k="wall-4">הפילרים הם דוגמאות. מותר להמציא חדשים.</li>
+        <li data-k="wall-5">שני רילז בשבוע, ב׳ ו-ד׳ ב-19:00, וסטוריז כמעט כל יום.</li>
+        <li data-k="wall-6">חומר אמיתי, בלי מראה AI. נייבי וכתום. אינסטגרם קודם, ואז טיקטוק.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand-mark"><span class="brand-dot"></span>מכינת גוונא</div>
+  <p>מבוסס על <code>organic-social-guidelines.md</code> ועל <code>brand.md</code></p>
+</footer>
+
+<button type="button" class="edit-fab" id="edit-fab" hidden>עריכת טקסט</button>
+<div class="edit-bar" id="edit-bar" hidden><button type="button" id="edit-save">שמירה</button><button type="button" id="edit-cancel">ביטול</button></div>
+<div class="edit-status" id="edit-status" role="status" aria-live="polite"></div>
+</div>
+<script>
+(function(){
+  var root=document.getElementById('guide');
+  var els=[].slice.call(root.querySelectorAll('[data-k]'));
+  function esc(t){return t.replace(/ /g,' ').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function walk(node){
+    var out='';
+    node.childNodes.forEach(function(n){
+      if(n.nodeType===3){out+=esc(n.nodeValue);return;}
+      if(n.nodeType!==1)return;
+      var t=n.tagName;
+      if(/^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE|IFRAME|OBJECT|EMBED|SVG|MATH|TITLE|TEXTAREA|SELECT)$/i.test(t))return;
+      var inner=walk(n);
+      if(t==='STRONG'||t==='B')out+='<strong>'+inner+'</strong>';
+      else if(t==='EM'||t==='I')out+='<em>'+inner+'</em>';
+      else if(t==='BR')out+='<br>';
+      else if(t==='SPAN'&&n.classList.contains('accent'))out+='<span class="accent">'+inner+'</span>';
+      else if(t==='DIV'||t==='P')out+=(out&&!/<br>$/.test(out)?'<br>':'')+inner;
+      else out+=inner;
+    });
+    return out;
+  }
+  function sanitize(html){var tpl=document.createElement('template');tpl.innerHTML=String(html);return walk(tpl.content);}
+  var orig={};
+  els.forEach(function(e){orig[e.dataset.k]=sanitize(e.innerHTML);});
+  var edits={};
+  function byKey(k){for(var i=0;i<els.length;i++){if(els[i].dataset.k===k)return els[i];}return null;}
+  function applyEdits(){
+    Object.keys(edits).forEach(function(k){
+      var el=byKey(k);
+      if(el&&typeof edits[k]==='string')el.innerHTML=sanitize(edits[k]);
+    });
+  }
+  async function loadEdits(){
+    try{
+      var r=await fetch('edits.json',{cache:'no-store'});
+      if(!r.ok)return;
+      var j=await r.json();
+      if(j&&typeof j==='object'&&!Array.isArray(j)){edits=j;applyEdits();}
+    }catch(e){}
+  }
+
+  var fab=document.getElementById('edit-fab'), bar=document.getElementById('edit-bar'),
+      saveBtn=document.getElementById('edit-save'), cancelBtn=document.getElementById('edit-cancel'),
+      statusEl=document.getElementById('edit-status');
+  var art=null, editing=false, before={};
+  function setStatus(t){statusEl.textContent=t||'';}
+  function insertAtCursor(node){
+    var sel=window.getSelection(); if(!sel||!sel.rangeCount)return;
+    var r=sel.getRangeAt(0); r.deleteContents(); r.insertNode(node);
+    r.setStartAfter(node); r.collapse(true); sel.removeAllRanges(); sel.addRange(r);
+  }
+  function onKey(e){
+    if(e.key==='Enter'){
+      e.preventDefault();
+      var ok=false; try{ok=document.execCommand('insertLineBreak');}catch(x){}
+      if(!ok)insertAtCursor(document.createElement('br'));
+    }
+  }
+  function onPaste(e){
+    e.preventDefault();
+    var text=(e.clipboardData||window.clipboardData).getData('text/plain')||'';
+    var ok=false; try{ok=document.execCommand('insertText',false,text);}catch(x){}
+    if(!ok)insertAtCursor(document.createTextNode(text));
+  }
+  function enter(){
+    editing=true; before={};
+    els.forEach(function(e){before[e.dataset.k]=e.innerHTML;e.setAttribute('contenteditable','true');e.addEventListener('keydown',onKey);e.addEventListener('paste',onPaste);});
+    root.classList.add('editing'); fab.hidden=true; bar.hidden=false; setStatus('');
+  }
+  function leave(){
+    editing=false;
+    els.forEach(function(e){e.removeAttribute('contenteditable');e.removeEventListener('keydown',onKey);e.removeEventListener('paste',onPaste);});
+    root.classList.remove('editing'); bar.hidden=true; fab.hidden=false;
+  }
+  function cancel(){
+    els.forEach(function(e){if(e.dataset.k in before)e.innerHTML=before[e.dataset.k];});
+    leave(); setStatus('');
+  }
+  async function save(){
+    if(!art)return;
+    var next=Object.assign({},edits);
+    els.forEach(function(e){
+      var k=e.dataset.k, v=sanitize(e.innerHTML);
+      if(v!==orig[k])next[k]=v; else delete next[k];
+    });
+    saveBtn.disabled=true; setStatus('שומר…');
+    try{
+      await art.publish({'edits.json':JSON.stringify(next,null,2)});
+      edits=next;
+      els.forEach(function(e){e.innerHTML=sanitize(e.innerHTML);});
+      leave(); setStatus('נשמר');
+      setTimeout(function(){if(!editing)setStatus('');},3000);
+    }catch(err){
+      var c=err&&err.code;
+      if(['not_writer','not_granted','capability_disabled','capability_removed','consent_required','not_declared'].indexOf(c)>-1)setStatus('שמירה לא זמינה כאן');
+      else if(c==='conflict')setStatus('מישהו אחר שמר בינתיים — הדף יתרענן');
+      else setStatus('השמירה לא הצליחה. אפשר לנסות שוב.');
+    }finally{saveBtn.disabled=false;}
+  }
+  async function initEditor(){
+    try{
+      var use=window.claude&&window.claude.use;
+      if(typeof use!=='function')return;
+      art=await window.claude.use('artifact');
+      if(!art)return;
+      var user=null;
+      try{user=await window.claude.use('user');}catch(e){user=null;}
+      var can=false;
+      if(user){try{can=!!(await user.canEdit());}catch(e){can=false;}}
+      else can=true;
+      if(!can)return;
+      fab.hidden=false;
+      fab.addEventListener('click',enter);
+      saveBtn.addEventListener('click',save);
+      cancelBtn.addEventListener('click',cancel);
+    }catch(e){}
+  }
+  loadEdits().then(initEditor);
+})();
+</script>
